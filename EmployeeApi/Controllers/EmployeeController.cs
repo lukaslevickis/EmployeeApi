@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EmployeeApi.DAL.Entities;
+﻿using System.Threading.Tasks;
 using EmployeeApi.Dtos;
 using EmployeeApi.Services;
 using Microsoft.AspNetCore.Mvc;

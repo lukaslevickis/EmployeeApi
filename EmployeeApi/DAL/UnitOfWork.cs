@@ -9,8 +9,8 @@ namespace EmployeeApi.DAL
     {
         private readonly AppDbContext _context;
 
-        public GenericRepository<Company> companies { get; private set; }
-        public GenericRepository<Employee> employees { get; private set; }
+        public GenericRepository<Employee> _employeeRepository;
+        private CompanyRepository _companyRepository;
 
         public UnitOfWork(AppDbContext context)
         {
@@ -22,16 +22,16 @@ namespace EmployeeApi.DAL
             return await _context.SaveChangesAsync();
         }
 
-        public GenericRepository<Company> CompanyRepository
+        public CompanyRepository CompanyRepository
         {
             get
             {
-                if (this.companies == null)
+                if (this._companyRepository == null)
                 {
-                    this.companies = new GenericRepository<Company>(_context);
+                    this._companyRepository = new CompanyRepository(_context);
                 }
 
-                return companies;
+                return _companyRepository;
             }
         }
 
@@ -40,11 +40,11 @@ namespace EmployeeApi.DAL
             get
             {
 
-                if (this.employees == null)
+                if (this._employeeRepository == null)
                 {
-                    this.employees = new GenericRepository<Employee>(_context);
+                    this._employeeRepository = new GenericRepository<Employee>(_context);
                 }
-                return employees;
+                return _employeeRepository;
             }
         }
     }

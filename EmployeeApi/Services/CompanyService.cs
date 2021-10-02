@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using EmployeeApi.DAL;
 using EmployeeApi.DAL.Entities;
 using EmployeeApi.Dtos;
@@ -10,9 +11,12 @@ namespace EmployeeApi.Services
     public class CompanyService
     {
         private readonly UnitOfWork _unit;
-        public CompanyService(UnitOfWork unit)
+        private readonly IMapper _mapper;
+
+        public CompanyService(UnitOfWork unit, IMapper mapper)
         {
             _unit = unit;
+            _mapper = mapper;
         }
 
         public async Task<List<Company>> GetAllAsync()
@@ -27,11 +31,7 @@ namespace EmployeeApi.Services
 
         public async Task CreateAsync(CompanyCreationDto company)
         {
-            var entity = new Company()
-            {
-                Name = company.Name
-            };
-
+            Company entity = _mapper.Map<Company>(company);
             await _unit.CompanyRepository.CreateAsync(entity);
         }
 
@@ -43,13 +43,19 @@ namespace EmployeeApi.Services
 
         public async Task UpdateAsync(CompanyEditDto company)
         {
-            var entity = new Company()
-            {
-                Id = company.Id,
-                Name = company.Name
-            };
-
+            Company entity = _mapper.Map<Company>(company);
             await _unit.CompanyRepository.UpdateAsync(entity);
+        }
+
+        public async Task<List<Employee>> GetCompanyEmployeesAsync(int companyId)
+        {
+            return await _unit.CompanyRepository.GetCompanyEmployeesAsync(companyId);
+        }
+
+        public async Task<int> GetCompanyEmployeeCountAsync(int companyId)
+        {
+            List<Employee> employees = await _unit.CompanyRepository.GetCompanyEmployeesAsync(companyId);
+            return employees.Count;
         }
     }
 }

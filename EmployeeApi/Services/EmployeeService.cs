@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using EmployeeApi.DAL;
 using EmployeeApi.DAL.Entities;
 using EmployeeApi.Dtos;
-using EmployeeApi.Models;
 
 namespace EmployeeApi.Services
 {
     public class EmployeeService
     {
         private readonly UnitOfWork _unit;
-        public EmployeeService(UnitOfWork unit)
+        private readonly IMapper _mapper;
+
+        public EmployeeService(UnitOfWork unit, IMapper mapper)
         {
             _unit = unit;
+            _mapper = mapper;
         }
 
         public async Task<List<Employee>> GetAllAsync()
@@ -28,14 +30,7 @@ namespace EmployeeApi.Services
 
         public async Task CreateAsync(EmployeeCreationDto employee)
         {
-            var entity = new Employee()
-            {
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                Sex = (Sex)employee.Sex,
-                CompanyId = employee.CompanyId
-            };
-
+            Employee entity = _mapper.Map<Employee>(employee);
             await _unit.EmployeesRepository.CreateAsync(entity);
         }
 
@@ -47,15 +42,7 @@ namespace EmployeeApi.Services
 
         public async Task UpdateAsync(EmployeeEditDto employee)
         {
-            var entity = new Employee()
-            {
-                Id = employee.Id,
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                Sex = (Sex)employee.Sex,
-                CompanyId = employee.CompanyId
-            };
-
+            Employee entity = _mapper.Map<Employee>(employee);
             await _unit.EmployeesRepository.UpdateAsync(entity);
         }
     }

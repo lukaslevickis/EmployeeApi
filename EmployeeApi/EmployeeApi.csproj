@@ -17,6 +17,12 @@
     <None Remove="Services\" />
     <None Remove="Dtos\" />
     <None Remove="Models\" />
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Profiles\" />
+    <None Remove="Extensions\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="NLog" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.2.2" />
@@ -28,6 +34,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.10" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NLog" Version="4.7.11" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -36,5 +46,7 @@
     <Folder Include="Services\" />
     <Folder Include="Dtos\" />
     <Folder Include="Models\" />
+    <Folder Include="Profiles\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

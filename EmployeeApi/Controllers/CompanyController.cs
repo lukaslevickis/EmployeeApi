@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using EmployeeApi.Dtos;
 using EmployeeApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -65,6 +62,20 @@ namespace EmployeeApi.Controllers
             await _companyService.DeleteAsync(id);
 
             return NoContent();
+        }
+
+        [HttpGet]
+        [Route("{id}/Employees")]
+        public async Task<ActionResult> Employees(int id)
+        {
+            return Ok(await _companyService.GetCompanyEmployeesAsync(id));
+        }
+
+        [HttpGet]
+        [Route("{id}/EmployeeCount")]
+        public async Task<ActionResult> EmployeeCount(int id)
+        {
+            return Ok(await _companyService.GetCompanyEmployeeCountAsync(id));
         }
     }
 }

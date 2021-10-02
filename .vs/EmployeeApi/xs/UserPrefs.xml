@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{FDEE123E-1185-4DD8-AF24-45AED4DAAD80}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="EmployeeApi/Controllers/EmployeeController.cs">
-    <Files>
-      <File FileName="EmployeeApi/Controllers/EmployeeController.cs" Line="64" Column="56" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="EmployeeApi" expanded="True">
             <Node name="EmployeeApi" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="EmployeeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True">
                 <Node name="Entities" expanded="True" />
-                <Node name="Repositories" expanded="True" />
+                <Node name="Repositories" expanded="True">
+                  <Node name="GenericRepository.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Dtos" expanded="True" />
+              <Node name="Extensions" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
             </Node>
@@ -41,7 +38,9 @@
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/lukaslevickis/Desktop/full stack training/vsapps/REST APIs/EmployeeApi/EmployeeApi/Controllers/EmployeeController.cs" relfile="EmployeeApi/Controllers/EmployeeController.cs" line="30" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using EmployeeApi.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApi.DAL.Repositories
@@ -46,11 +43,5 @@ namespace EmployeeApi.DAL.Repositories
             _context.Remove(entity);
             await _context.SaveChangesAsync();
         }
-
-        //public async Task UpdateAsync(Company entity)
-        //{
-        //    _context.Entry(entity).State = EntityState.Modified;
-        //    await _context.SaveChangesAsync();
-        //}
     }
 }
