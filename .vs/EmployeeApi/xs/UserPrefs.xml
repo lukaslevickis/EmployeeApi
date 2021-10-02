@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{FDEE123E-1185-4DD8-AF24-45AED4DAAD80}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployeeApi/Controllers/EmployeeController.cs">
+    <Files>
+      <File FileName="EmployeeApi/Controllers/EmployeeController.cs" Line="64" Column="56" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EmployeeApi" expanded="True">
+            <Node name="EmployeeApi" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="EmployeeController.cs" selected="True" />
+              </Node>
+              <Node name="DAL" expanded="True">
+                <Node name="Entities" expanded="True" />
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="Dtos" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>Email</Value>
+          <Value>Friends</Value>
+          <Value>a.CanBeConnected(d)</Value>
+          <Value>person.Email</Value>
+          <Value>Email</Value>
+          <Value>point</Value>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.EmployeeApi PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../Database/RegistracijosPozymiai/RegistracijosPozymiai/DTO/RegFormService.cs" line="14" column="16" endLine="14" endColumn="67" offsetX="-1" offsetY="-1" expression="client.Cluster.Description" liveUpdate="False" />
+    <Watch file="../../../../../Database/RegistracijosPozymiai/RegistracijosPozymiai/DTO/RegFormService.cs" line="14" column="16" endLine="14" endColumn="67" offsetX="-1" offsetY="-1" expression="client.Cluster.Description" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
