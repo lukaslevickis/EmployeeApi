@@ -20,10 +20,11 @@ namespace EmployeeApi.DAL.Repositories
             return await dbSet.ToListAsync();
         }
 
-        public virtual async Task CreateAsync(TEntity entity)
+        public virtual async Task<TEntity> CreateAsync(TEntity entity)
         {
             dbSet.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public virtual async Task<TEntity> GetByIDAsync(object id)
@@ -31,11 +32,12 @@ namespace EmployeeApi.DAL.Repositories
             return await dbSet.FindAsync(id);
         }
 
-        public async Task UpdateAsync(TEntity entityToUpdate)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            dbSet.Attach(entityToUpdate);
-            _context.Entry(entityToUpdate).State = EntityState.Modified;
+            dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task DeleteAsync(TEntity entity)

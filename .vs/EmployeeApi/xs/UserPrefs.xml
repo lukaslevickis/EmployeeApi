@@ -1,5 +1,9 @@
 ﻿<Properties StartupConfiguration="{FDEE123E-1185-4DD8-AF24-45AED4DAAD80}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployeeApiTests/EmployeeServiceTest.cs">
+    <Files>
+      <File FileName="EmployeeApi/Services/EmployeeService.cs" Line="1" Column="1" />
+      <File FileName="EmployeeApiTests/EmployeeServiceTest.cs" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -7,26 +11,20 @@
             <Node name="EmployeeApi" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="DAL" expanded="True">
-                <Node name="Entities" expanded="True" />
-                <Node name="Repositories" expanded="True">
-                  <Node name="GenericRepository.cs" selected="True" />
-                </Node>
+                <Node name="Repositories" expanded="True" />
               </Node>
-              <Node name="Extensions" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="EmployeeApiTests" expanded="True">
+              <Node name="EmployeeServiceTest.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>Email</Value>
-          <Value>Friends</Value>
-          <Value>a.CanBeConnected(d)</Value>
-          <Value>person.Email</Value>
-          <Value>Email</Value>
-          <Value>point</Value>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="EmployeeApi" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
@@ -39,7 +37,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/lukaslevickis/Desktop/full stack training/vsapps/REST APIs/EmployeeApi/EmployeeApi/Controllers/EmployeeController.cs" relfile="EmployeeApi/Controllers/EmployeeController.cs" line="30" column="1" />
+      <Breakpoint file="/Users/lukaslevickis/Desktop/full stack/BIT/vsapps/REST APIs/EmployeeApi/EmployeeApiTests/EmployeeServiceTest.cs" relfile="EmployeeApiTests/EmployeeServiceTest.cs" line="21" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

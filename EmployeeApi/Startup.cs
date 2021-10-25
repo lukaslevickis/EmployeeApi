@@ -1,4 +1,5 @@
 ﻿using EmployeeApi.DAL;
+using EmployeeApi.DAL.Entities;
 using EmployeeApi.DAL.Repositories;
 using EmployeeApi.Extensions;
 using EmployeeApi.Services;
@@ -28,10 +29,12 @@ namespace EmployeeApi
             services.AddScoped<CompanyService>();
             services.AddScoped<EmployeeService>();
 
-            services.AddScoped<CompanyRepository>();
-            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ICompanyRepository>();
+            services.AddScoped<IGenericRepository<Employee>>();
 
-            services.AddScoped<UnitOfWork>();
+            //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            //services.AddScoped<UnitOfWork>();
 
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
 
@@ -43,6 +46,8 @@ namespace EmployeeApi
             });
 
             services.AddControllers();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +69,8 @@ namespace EmployeeApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(m => m.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
             app.UseAuthorization();
 

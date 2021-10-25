@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using EmployeeApi.DAL.Entities;
 using EmployeeApi.Dtos;
 using EmployeeApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -36,9 +37,7 @@ namespace EmployeeApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] EmployeeCreationDto employee)
         {
-            await _employeeService.CreateAsync(employee);
-
-            return NoContent();
+            return Ok(await _employeeService.CreateAsync(employee));
         }
 
         // PUT api/values/5
@@ -50,9 +49,7 @@ namespace EmployeeApi.Controllers
                 return BadRequest();
             }
 
-            await _employeeService.UpdateAsync(employee);
-
-            return NoContent();
+            return Ok(await _employeeService.UpdateAsync(employee));
         }
 
         // DELETE api/values/5

@@ -1,49 +1,60 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using EmployeeApi.DAL;
 using EmployeeApi.DAL.Entities;
+using EmployeeApi.DAL.Repositories;
 using EmployeeApi.Dtos;
 
 namespace EmployeeApi.Services
 {
     public class EmployeeService
     {
-        private readonly UnitOfWork _unit;
+        private readonly IGenericRepository<Employee> _employeeRepository;
         private readonly IMapper _mapper;
 
-        public EmployeeService(UnitOfWork unit, IMapper mapper)
+        public EmployeeService(IGenericRepository<Employee> employeeRepository, IMapper mapper)
         {
-            _unit = unit;
+            _employeeRepository = employeeRepository;
             _mapper = mapper;
         }
 
         public async Task<List<Employee>> GetAllAsync()
         {
-            return await _unit.EmployeesRepository.GetAllAsync();
+            return await _employeeRepository.GetAllAsync();
         }
 
         public async Task<Employee> GetByIdAsync(int id)
         {
-            return await _unit.EmployeesRepository.GetByIDAsync(id);
+            return await _employeeRepository.GetByIDAsync(id);
         }
 
-        public async Task CreateAsync(EmployeeCreationDto employee)
+        public async Task<Employee> CreateAsync(EmployeeCreationDto employee)
         {
             Employee entity = _mapper.Map<Employee>(employee);
-            await _unit.EmployeesRepository.CreateAsync(entity);
+            //entity.CompanyId = 3;
+            return await _employeeRepository.CreateAsync(entity);
         }
 
         public async Task DeleteAsync(int id)
         {
             var entity = await GetByIdAsync(id);
-            await _unit.EmployeesRepository.DeleteAsync(entity);
+            await _employeeRepository.DeleteAsync(entity);
         }
 
-        public async Task UpdateAsync(EmployeeEditDto employee)
+        public async Task<Employee> UpdateAsync(EmployeeEditDto employee)
         {
             Employee entity = _mapper.Map<Employee>(employee);
-            await _unit.EmployeesRepository.UpdateAsync(entity);
+            //entity.CompanyId = 3;
+            return await _employeeRepository.UpdateAsync(entity);
+        }
+
+        public async Task<List<string>> GetAllFirstNamesAsync()
+        {
+            List<Employee> employees = await _employeeRepository.GetAllAsync();
+
+            return employees.Select(x => x.FirstName).ToList();
         }
     }
 }
